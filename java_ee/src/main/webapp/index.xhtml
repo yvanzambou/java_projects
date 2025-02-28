@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AMAZON LIGHT</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</h:head>
+
+<h:body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title main-title">
+                Willkommen bei AMAZON LIGHT
+            </h1>
+        </div>
+    </section>
+
+    <div>
+        <nav>
+            <label for="warengruppe">Warengruppe</label><select name="warengruppe" id="warengruppe" style="margin-right: 60px">
+                <option value="warengruppe/kinder.html">Kinder</option>
+                <option value="warengruppe/kochen.html">Kochen</option>
+                <option value="warengruppe/liebe.html">Liebe</option>
+                <option value="warengruppe/horror.html">Horror</option>
+                <option value="warengruppe/bildung.html">Bildung</option>
+            </select>
+            <a href="warenkorb.xhtml"><img src="img/cart.png" style="height: 50px; position: relative; top: 15px; right: 25px;"/></a>
+        </nav>
+    </div>
+
+    <div class="columns">
+        <div class="column logo">
+            <img src="img/book_logo.png" style="width: 350px;" />
+        </div>
+        <div class="column bts">
+            <div class="buttons">
+                <a href="registration.xhtml"><button class="btns is-info">REGISTRIEREN</button></a>
+                <a href="login.xhtml"><button class="btns is-info">ANMELDEN</button></a>
+            </div>
+        </div>
+    </div>
+</h:body>
+
+</html>

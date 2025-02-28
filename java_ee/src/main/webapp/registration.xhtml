@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>AMAZON LIGHT</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+</h:head>
+<h:body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title main-title">AMAZON LIGHT</h1>
+        </div>
+    </section>
+
+    <div class="resumePage">
+        <span style="font-size: 1.7rem;"><strong>REGISTRIERUNG</strong></span>
+        <hr/>
+        <h:form id="registerForm">
+            <h:panelGrid columns="3">
+                <h:outputLabel value="Vorname" for="vorname" />
+                <h:inputText id="vorname" value="#{registrationHandler.firstname}" validatorMessage="bitte Vorname eingeben">
+                    <f:validateLength minimum="1" maximum="30"/>
+                    <p:tooltip for="vorname" value="Vorname hier eingeben" />
+                </h:inputText>
+                <h:message for="vorname" style="color: red" />
+
+                <h:outputLabel value="Nachname" for="nachname" />
+                <h:inputText id="nachname" value="#{registrationHandler.lastname}" validatorMessage="bitte Nachname eingeben">
+                    <f:validateLength minimum="1" maximum="30"/>
+                    <p:tooltip for="nachname" value="Nachname hier eingeben" />
+                </h:inputText>
+                <h:message for="nachname" style="color: red" />
+
+                <h:outputLabel value="Email" for="email" />
+                <h:inputText id="email" value="#{registrationHandler.email}" validatorMessage="bitte Email eingeben">
+                    <f:validateRegex pattern=".+@.+\..+" />
+                    <p:tooltip for="email" value="E-Mail-Adresse hier eingeben" />
+                </h:inputText>
+                <h:message for="email" style="color: red" />
+
+                <h:outputLabel value="Geburtsdatum" for="birthday" />
+                <h:inputText id="birthday" value="#{registrationHandler.birthday}" validatorMessage="bitte Geburtsdatum eingeben">
+                    <f:convertDateTime pattern="dd.MM.yyyy" />
+                    <p:tooltip for="birthday" value="Geburtsdatum (DD.MM.YYYY) hier eingeben" />
+                    <f:validateRequired />
+                </h:inputText>
+                <h:message for="birthday" style="color: red" />
+
+                <h:outputLabel value="Passwort" for="password" />
+                <h:inputSecret id="password" value="#{registrationHandler.password}" validatorMessage="bitte Passwort eingeben">
+                    <f:validateLength minimum="6" />
+                    <p:tooltip for="password" value="Mindestens 6 Zeichen" />
+                </h:inputSecret>
+                <h:message for="password" style="color: red" />
+
+                <h:outputLabel value="Straße" for="street" />
+                <h:inputText id="street" value="#{registrationHandler.street}" validatorMessage="bitte Straße hier eingeben">
+                    <f:validateLength minimum="2" maximum="100"/>
+                    <p:tooltip for="street" value="Straße hier eingeben" />
+                </h:inputText>
+                <h:message for="street" style="color: red" />
+
+                <h:outputLabel value="Hausnummer" for="houseNumber" />
+                <h:inputText id="houseNumber" value="#{registrationHandler.houseNumber}" validatorMessage="bitte Hausnummer eingeben">
+                    <f:validateLength minimum="1" maximum="3"/>
+                    <p:tooltip for="houseNumber" value="Hausnummer hier eingeben" />
+                </h:inputText>
+                <h:message for="houseNumber" style="color: red" />
+
+                <h:outputLabel value="Stadt" for="city" />
+                <h:inputText id="city" value="#{registrationHandler.city}" validatorMessage="bitte Stadt eingeben">
+                    <f:validateLength minimum="2" maximum="30"/>
+                    <p:tooltip for="city" value="Stadt hier eingeben" />
+                </h:inputText>
+                <h:message for="city" style="color: red" />
+
+                <h:outputLabel value="Postleitzahl" for="postalCode" />
+                <h:inputText id="postalCode" value="#{registrationHandler.postalCode}" validatorMessage="bitte Postleitzahl eingeben">
+                    <f:validateLength minimum="5" maximum="5"/>
+                    <p:tooltip for="postalCode" value="Postleitzahl hier eingeben" />
+                </h:inputText>
+                <h:message for="postalCode" style="color: red" />
+
+            </h:panelGrid>
+            <h:commandButton value="Registrieren" action="#{registrationHandler.registration}" />
+            <h:messages globalOnly="true"/>
+        </h:form>
+    </div>
+</h:body>
+</html>

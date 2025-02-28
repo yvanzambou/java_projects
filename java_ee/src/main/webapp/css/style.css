@@ -1,0 +1,171 @@
+/* Startseite */
+.title {
+    font-size: 3rem;
+}
+
+.section {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+.greeting {
+    margin-left: 50px;
+    font-family: Tahoma, sans-serif;
+    font-size: 25px;
+    color: green;
+}
+
+.columns {
+    margin-top: 3rem;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.bts {
+    display: flex;
+    text-align: center;
+}
+
+.is-info {
+    width: 250px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Startseite */
+
+/* Warengruppe */
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 50px;
+    height: 10px;
+}
+
+nav ul {
+    text-align: right;
+}
+
+ul li a {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: black;
+}
+
+.kat-titel {
+    font-size: 2.5rem;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    padding-bottom: 80px;
+}
+
+.bookplace {
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
+    flex: 1 0 21%; /* Basisgröße 21%, um 4 Bücher pro Zeile anzuzeigen */
+    margin: 25px;
+    box-sizing: border-box;
+}
+
+.books img {
+    width: 250px;
+    height: 250px;
+}
+
+.book-title, .book-price {
+    color: black;
+    font-size: 20px;
+}
+
+/* Warengruppe */
+
+/* Zusammenfassung */
+
+.resumePage {
+    margin: auto;
+    width: 80%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.totalPrice {
+    font-family: arial;
+    font-size: 2rem;
+}
+
+.customerData {
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.btns {
+    font-size: 1.2rem;
+}
+
+th {
+    font-size: 25px;
+}
+
+td {
+    font-size: 18px;
+}
+
+select {
+    font-size: 20px;
+}
+
+input {
+    margin-bottom: 7px;
+    font-size: 18px;
+}
+
+/* Zusammenfassung */
+
+.cart td {
+    padding: 30px 0 10px 0;
+}
+
+.cart td img {
+    height: 130px;
+    width: 125px;
+}
+
+.check {
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+}
+.check img {
+    width: 200px;
+}
+
+.final {
+    display: block;
+
+    align-content: center;
+}
+
+.msg {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.detail td {
+    padding-bottom: 20px;
+}

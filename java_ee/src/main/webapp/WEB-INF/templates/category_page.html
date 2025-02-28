@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Amazon Light</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                <a href="./index.xhtml">AMAZON LIGHT</a>
+            </h1>
+        </div>
+    </section>
+
+    <div>
+        <nav>
+        	<div class="greeting" th:text="'Hallo ' + ${customerName} + ','">-- CUSTOMERNAME --</div>
+            <ul>
+                <select select onchange="window.location.href = this.value;" name="warengruppe" id="warengruppe" style="margin-right: 60px">
+                    <option value="" disabled selected>Warengruppe auswählen</option>
+                    <option th:each="category: ${allCategories}" th:text="${category.getName}" th:value="@{/categoryPage(categoryId=${category.categoryId})}">--CATEGORY ERROR--</option>
+                </select>
+                <li><a href="/java_ee/warenkorb.xhtml"><img src="./img/cart.png" style="height: 50px; position: relative; top: 15px; right: 25px;" alt=""></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="kat-titel" th:text="${categoryName}">-- CATEGORY NAME ERROR --</div>
+    <hr>
+    <div class="books">
+        <div class="bookplace" th:each="book: ${booksForCategory}">
+            <a th:href="@{/bookDetailServlet(bookId=${book.bookId})}"><img th:src="${book.imagePath}" style="width: 250px; height: 250px;" alt=""></a>
+            <h3 class="book-title" th:text="${book.title}">TITLE ERROR</h3>
+            <h3 class="book-price" th:text="${book.getPriceFormat}">PRICE ERROR</h3>
+        </div>
+    </div>
+    <div style="text-align: right; margin-right: 100px; margin-bottom: 50px;">
+        <a href="warenkorb.xhtml"><button class="btns">Zum Warenkorb &#8594;</button></a>
+    </div>
+</body>
+
+</html>
