@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Nachhilfe Einstein</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 17px;
+        display: flex;
+    }
+
+    .container {
+        text-align: center;
+        border: 1px solid grey;
+        border-radius: 10px;
+        margin: auto;
+        padding: 0 50px 50px 50px;
+    }
+
+    button {
+        background-color: rgb(140, 237, 61);
+        padding: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Rechnung bearbeiten</h1>
+  <form th:action="@{/invoice/edit/{id}(id=${invoice.id})}" th:object="${invoice}" method="POST">
+    <div>
+      <label>Name</label>
+      <input type="text" name="childName" th:field="*{childName}" placeholder="Name eingeben"/>
+    </div>
+    <br/>
+    <div>
+      <label>Fach 1</label>
+      <input type="text" name="subject1" th:field="*{subject1}" placeholder="Fach 1 eingeben"/>
+    </div>
+    <br/>
+    <div>
+      <label>UE 1</label>
+      <input type="number" step="0.01" name="lessonUnit1" th:field="*{lessonUnit1}" placeholder="UE 1 eingeben"/>
+    </div>
+    <br/>
+    <div>
+      <label>Fach 2</label>
+      <input type="text" name="subject2" th:field="*{subject2}" placeholder="Fach 2 eingeben"/>
+    </div>
+    <br/>
+    <div>
+      <label>UE 2</label>
+      <input type="number" step="0.01" name="lessonUnit2" th:field="*{lessonUnit2}" placeholder="UE 2 eingeben"/>
+    </div>
+    <br/>
+    <div>
+      <label>Gesamt UE</label>
+      <input type="number" name="totalLessonUnit" th:field="*{totalLessonUnit}" placeholder="Gesamt UE eingeben" disabled/>
+    </div>
+    <br/>
+    <div>
+      <label>Unterrichtssatz</label>
+      <input type="number" step="0.01" name="lessonUnitPrice" th:field="*{lessonUnitPrice}" placeholder="Unterrichtssatz eingeben"/>
+    </div>
+    <br/>
+    <div>
+      <label>Gesamtbetrag</label>
+      <input type="number" name="totalAmount" th:field="*{totalAmount}" placeholder="Gesamtbetrag eingeben" disabled/>
+    </div>
+    <br/>
+    <div>
+      <button type="submit">Speichern</button>
+    </div>
+  </form>
+</div>
+</body>
+</html>

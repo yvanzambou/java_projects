@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nachhilfe Einstein</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 17px;
+            display: flex;
+        }
+
+        .container {
+            text-align: center;
+            border: 1px solid grey;
+            border-radius: 10px;
+            margin: auto;
+            padding: 0 50px 50px 50px;
+        }
+
+        button {
+            background-color: rgb(140, 237, 61);
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Neues Kind einfügen</h1>
+        <form th:action="@{/children}" th:object="${child}" method="POST">
+                <div>
+                    <label>Name</label>
+                    <input type="text" name="name" th:field="*{name}" placeholder="Name eingeben"/>
+                </div>
+                <br/>
+                <div>
+                    <label>Gesetzlicher Vertreter</label>
+                    <input type="text" name="legalRepresentative" th:field="*{legalRepresentative}" placeholder="Vertreter eingeben"/>
+                </div>
+                <br/>
+                <div>
+                    <label>BG-Nummer</label>
+                    <input type="text" name="bgNumber" th:field="*{bgNumber}" placeholder="BG-Nummer eingeben"/>
+                </div>
+                <br/>
+                <div>
+                    <label>Wohngeld-Nummer</label>
+                    <input type="text" name="housingBenefitNumber" th:field="*{housingBenefitNumber}" placeholder="Wohngeld-Nummer eingeben"/>
+                </div>
+                <br/>
+                <div>
+                    <label>Fach 1</label>
+                    <input type="text" name="subject1" th:field="*{subject1}" placeholder="Fach 1 eingeben"/>
+                </div>
+                <br/>
+                <div>
+                    <label>Fach 2</label>
+                    <input type="text" name="subject2" th:field="*{subject2}" placeholder="Fach 2 eingeben"/>
+                </div>
+                <br/>
+                <div>
+                    <label>Empfänger</label>
+                    <input type="text" name="recipient" th:field="*{recipient}" placeholder="Empfänger eingeben"/>
+                </div>
+                <br/>
+                <div>
+                    <label>Datum</label>
+                    <input type="text" name="date" th:field="*{date}" placeholder="Beispiel: 01.01.2020"/>
+                </div>
+                <br/>
+                <div>
+                    <label>Rechnungsnummer</label>
+                    <input type="text" name="invoiceNumber" th:field="*{invoiceNumber}" placeholder="Rechnungsnummer eingeben"/>
+                </div>
+                <br/>
+                <div>
+                    <label>Zeitraum</label>
+                    <input type="text" name="period" th:field="*{period}" placeholder="Zeitraum eingeben"/>
+                </div>
+                <br/>
+                <div>
+                    <label>Gesamtbetrag</label>
+                    <input type="text" name="totalAmount" th:field="*{totalAmount}" placeholder="Gesamtbetrag eingeben" disabled/>
+                </div>
+                <br/>
+                <div>
+                    <button type="submit">Speichern</button>
+                </div>
+            </form>
+    </div>
+</body>
+</html>
